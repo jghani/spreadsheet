@@ -1,0 +1,16 @@
+.Main {
+  display: flex;
+  flex-direction: column;
+  min-height: 94vh;
+  .MainFooter {
+    flex: 0 0 auto;
+    background-color: #24252a;
+  }
+  .MainContent {
+    flex: 1 0 auto;
+    min-height: 85vh;
+  }
+  .MainHeader {
+    flex: 0 0 auto;
+  }
+}
