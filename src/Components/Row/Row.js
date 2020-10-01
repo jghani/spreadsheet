@@ -1,5 +1,8 @@
 import React from 'react'
 import Cell from '../Cell/Cell'
+
+//Row component that uses handleChangedCell method to call
+
 const Row = props => {
   const cells = []
   const y = props.y

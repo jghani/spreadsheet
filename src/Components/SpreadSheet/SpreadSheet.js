@@ -80,7 +80,6 @@ class SpreadSheet extends Component {
       return res
     }
     if (res.result.toString().slice(0, 1) === '=') {
-      // formula points to formula
       res = this.executeFormula(cell, res.result.slice(1))
     }
     return res

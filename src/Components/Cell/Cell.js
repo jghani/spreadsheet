@@ -1,7 +1,7 @@
 import React from 'react'
-/**
- * Cell represents the atomic element of a table
- */
+
+//Cell represents the atomic element of a table
+ 
 export default class Cell extends React.Component {
   constructor(props) {
     super(props)
@@ -17,10 +17,8 @@ export default class Cell extends React.Component {
     this.delay = 200
     this.prevent = false
   }
-  /**
-   * Add listener to the `unselectAll` event used to broadcast the
-   * unselect all event
-   */
+  //Add listener to the `unselectAll` event used to broadcast the unselect all event
+   
   componentDidMount() {
     window.document.addEventListener('unselectAll',
       this.handleUnselectAll)
@@ -92,17 +90,14 @@ export default class Cell extends React.Component {
     }
   }
 
-  /**
-   * Handle moving away from a cell, stores the new value
-   */
+  // Handle moving away from a cell, stores the new value
+   
   onBlur = (e) => {
     this.hasNewValue(e.target.value)
   }
 
-  /**
-   * Used by `componentDid(Un)Mount`, handles the `unselectAll`
-   * event response
-   */
+    //Used by `componentDid(Un)Mount`, handles the `unselectAll' event response
+  
   handleUnselectAll = () => {
     if (this.state.selected || this.state.editing) {
       this.setState({ selected: false, editing: false })
@@ -125,18 +120,15 @@ export default class Cell extends React.Component {
     this.setState({ editing: false })
   }
 
-  /**
-   * Emits the `unselectAll` event, used to tell all the other
-   * cells to unselect
-   */
+  //Emits the `unselectAll` event, used to tell all the other cells to unselect
+   
   emitUnselectAllEvent = () => {
     const unselectAllEvent = new Event('unselectAll')
     window.document.dispatchEvent(unselectAllEvent)
   }
-
-  /**
-   * Handle clicking a Cell.
-   */
+  
+   //Handles clicking a Cell.
+   
   clicked = () => {
     // Prevent click and double click to conflict
     this.timer = setTimeout(() => {
@@ -150,9 +142,8 @@ export default class Cell extends React.Component {
     }, this.delay)
   }
 
-  /**
-   * Handle doubleclicking a Cell.
-   */
+   //Handle doubleclicking a Cell.
+   
   doubleClicked = () => {
     // Prevent click and double click to conflict
     clearTimeout(this.timer)
@@ -173,9 +164,8 @@ export default class Cell extends React.Component {
     }
     return value
   }
-  /**
-   * Calculates a cell's CSS values
-   */
+  //Calculates a cell's CSS values
+  
   calculateCss = () => {
     const css = {
       width: '80px',

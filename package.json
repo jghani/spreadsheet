@@ -2,7 +2,7 @@
   "name": "spreadsheet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jghani.github.io/spreadsheet",
+  "homepage": "https://github.com/jghani/spreadsheet",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
