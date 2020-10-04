@@ -73,6 +73,24 @@ class SpreadSheet extends Component {
   executeFormula = (cell, value) => {
     this.parser.cell = cell
     let res = this.parser.parse(value)
+
+    this.parser.setFunction('AVG', function(params) {
+      var realData = [];
+
+      if (params[0] instanceof Array) {
+        realData = params[0];
+      } else {
+        realData = params;
+      }
+
+      let totalNum = 0;
+      let i = 0;
+      for  (i=0; i<realData.length; i++) {
+        totalNum = parseInt(totalNum) + parseInt(realData[i]);
+      }
+      return totalNum / parseInt(realData.length);
+    });
+    
     if (res.error != null) {
       return res // tip: returning `res.error` shows more details
     }
