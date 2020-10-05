@@ -74,6 +74,8 @@ class SpreadSheet extends Component {
     this.parser.cell = cell
     let res = this.parser.parse(value)
 
+    //AVG function here
+
     this.parser.setFunction('AVG', function(params) {
       var realData = [];
 
@@ -90,7 +92,7 @@ class SpreadSheet extends Component {
       }
       return totalNum / parseInt(realData.length);
     });
-    
+
     if (res.error != null) {
       return res // tip: returning `res.error` shows more details
     }

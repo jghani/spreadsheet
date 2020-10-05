@@ -1,6 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### A simple web-based spreadsheet
+
+This project makes a spreadsheet like the google sheets that holds columns A-Z and Rows 1-50 with all basic math
+operators working including averaging two or more values.
+
+### Prerequisites for the project
+
+What things you need to install the software and how to install them
+
+### `npm install`
+
+Install the node package manager
 
 In the project directory, you can run:
 
